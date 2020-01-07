@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active: dev
+
+---
+server:
+  port: 8005
+spring:
+  profiles: dev
+  application:
+    name: springcloud-provider-dept
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/,http://localhost:7003/eureka/
+
+---
+server:
+  port: 8006
+spring:
+  profiles: test
+  application:
+    name: springcloud-provider-dept
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/,http://localhost:7003/eureka/
+
+
